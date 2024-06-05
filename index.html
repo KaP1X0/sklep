@@ -3,69 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boczur.pl SkyBlock Sklep</title>
+    <title>sklep.boczur.pl</title>
+    <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="style.css">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Sklep Boczur.pl">
+    <meta property="og:description" content="Najlepszy serwer SkyBlock w Polsce. Sprawdź nasze oferty w sklepie!">
+    <meta property="og:image" content="img/icon.png">
+    <meta property="og:url" content="https://sklep.boczur.pl">
+    <meta property="og:type" content="website">
+    <style>
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .theme-switch input[type="checkbox"] {
+            display: none;
+        }
+
+        .theme-switch label {
+            display: block;
+            width: 80px;
+            height: 40px;
+            background-color: #ccc;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-switch label::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 32px;
+            height: 32px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.30s ease;
+        }
+
+        .theme-switch label::after {
+            content: '🌞';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-110%, -50%);
+            font-size: 24px;
+            transition: transform 0.30s ease;
+        }
+
+        .theme-switch input[type="checkbox"]:checked + label::after {
+            content: '🌚';
+        }
+
+        .theme-switch input[type="checkbox"]:checked + label::before {
+            transform: translateX(40px);
+        }
+
+        .theme-switch input[type="checkbox"]:checked + label {
+            background-color: #000000;
+        }
+
+        .theme-switch input[type="checkbox"]:checked + label::after {
+            color: #ffffff;
+        }
+
+        .theme-switch input[type="checkbox"] + label::after {
+            transition: transform 0.30s ease; 
+        }
+
+        .theme-switch input[type="checkbox"]:checked + label::before,
+        .theme-switch input[type="checkbox"]:checked + label::after {
+            transition-delay: 0.10s;
+        }
+
+        .theme-switch input[type="checkbox"]:checked + label::after {
+            transform: translate(-110%, -50%) translateX(40px);
+        }
+        .shop-items .item,
+        .rank-items .rank {
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        text-align: center;
+        width: calc(33.333% - 1rem);
+        transition: transform 0.30s ease-in-out, box-shadow 0.30s ease-in-out;
+        border-radius: 10px;
+        cursor: pointer;
+        }
+
+        .shop-items .item:hover,
+        .rank-items .rank:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px rgba(0,0,0,0.3);
+        }
+
+        .shop-items .item img,
+        .rank-items .rank img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 40px;
+        margin-bottom: 1rem;
+        }
+
+        .shop-items .item h3,
+        .rank-items .rank h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        }
+
+        .shop-items .item p,
+        .rank-items .rank p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        }
+
+        .dark-theme .shop-items .item,
+        .dark-theme .rank-items .rank {
+        background: #333;
+        color: #fff;
+        }
+
+        .dark-theme {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        }
+
+        .dark-theme header {
+        background-color: #333;
+        }
+
+        .dark-theme section {
+        background-color: #333333f3;
+        }
+
+        .dark-theme footer {
+        background-color: #222;
+        }
+    </style>
+    
 </head>
+
 <body>
-    <ul class="background">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-     </ul>
+<div class="theme-switch">
+    <input type="checkbox" id="toggle-theme">
+    <label for="toggle-theme"></label>
+</div>
+
+<script>
+    const themeSwitch = document.getElementById('toggle-theme');
+
+    themeSwitch.addEventListener('change', () => {
+        document.body.classList.toggle('dark-theme');
+    });
+</script>
+
+
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <header>
         <div class="container">
-            <h1>Boczur.pl Sklep</h1>
+            <h1>Sklep Boczur.pl</h1>
             <nav>
                 <ul>
                     <li><a href="#ranks">Rangi</a></li>
                     <li><a href="#klucze">Klucze</a></li>
+                    <li><a href="#money">Pieniądze</a></li>
+                    <li><a href="#Unban">Usługi</a></li>
                     <li><a href="#social-media">Sociale</a></li>
                 </ul>
             </nav>
@@ -76,6 +190,74 @@
         <div class="container">
             <h2>Witaj na serwerze Boczur.pl!</h2>
             <p>Najlepszy serwer SkyBlock w Polsce. Sprawdź nasze oferty w sklepie!</p>
+            <p style="color: #ffffff; font-family: 'Minecraft', sans-serif;">
+                zobacz nasz 
+                <a href="https://www.youtube.com/watch?v=W1UdXM0UYWI&t=12s" style="color: #FFA500; text-decoration: none;">TRAILER</a> 
+                lub skopiuj IP naszego servera: 
+                <a id="copy-link" href="#" style="color: #FFA500; text-decoration: none;">kliknij tutaj👈</a>
+            </p>
+            <div id="notification" class="notification">Skopiowano: boczur.pl</div>
+        </div>
+    </section>
+    
+    <style>
+        #copy-link:active {
+            color: #FFD700;
+        }
+        .notification {
+            display: none;
+            position: absolute;
+            background-color: #FF4500;
+            color: #FFFFFF;
+            border: 2px solid #FFA500;
+            padding: 5px;
+            border-radius: 1px;
+            font-family: 'Minecraft', sans-serif;
+        }
+    </style>
+    
+    <script>
+        document.getElementById('copy-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            copyToClipboard('boczur.pl');
+    
+            var notification = document.getElementById('notification');
+            notification.style.left = event.pageX + 'px';
+            notification.style.top = event.pageY + 'px';
+            notification.style.display = 'block';
+    
+            window.scrollTo(0, 0);
+    
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 2000);
+        });
+    
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(function() {
+                    console.log('Skopiowano: ' + text);
+                }, function(err) {
+                    console.error('Nie udało się skopiować tekstu: ', err);
+                });
+            } else {
+                var textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    console.log('Skopiowano: ' + text);
+                } catch (err) {
+                    console.error('Nie udało się skopiować tekstu: ', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+    </script>
+    
+            
         </div>
     </section>
 
@@ -86,26 +268,42 @@
         </div>
     </section>
 
+    <section id="polecane-unban"> 
+        <div class="container">
+            <div id="polecane">
+                <h2>Polecane</h2>
+                <div class="polecane-item">
+                    <img src="img/zestaw.png" alt="1">
+                    <h3>Pakiet rang</h3>
+                    <h1>Pakiet ten zawiera range swagger + 25x kluczy oraz 10000$ </h1>
+                    <s>300zł</s>
+                    <h1>250zł</h1>
+                    <button onclick="location.href='purchase.html'">Kup teraz</button>
+                </div>
+            </div> 
+        </div>
+    </section>      
+
     <section id="ranks">
         <div class="container">
             <h2>Rangi Vip</h2>
             <div class="shop-items">
                 <div class="item">
-                    <img src="https://via.placeholder.com/300" alt="VIP">
+                    <img src="img/RANGAVIP.png" alt="VIP">
                     <h3>VIP</h3>
                     <p>Uzyskaj dostęp do ekskluzywnych korzyści VIP!</p>
                     <h1>10zł</h1>
                     <button onclick="location.href='vip.html'">Kup teraz</button>
                 </div>
                 <div class="item">
-                    <img src="https://via.placeholder.com/300" alt="SVIP">
+                    <img src="img/RANGASVIP.png" alt="SVIP">
                     <h3>SVIP</h3>
                     <p>Dołącz do elity z rangą SVIP!</p>
                     <h1>20zł</h1>
                     <button onclick="location.href='svip.html'">Kup teraz</button>
                 </div>
                 <div class="item">
-                    <img src="https://via.placeholder.com/300" alt="MVIP">
+                    <img src="img/RANGAMVIP.png" alt="MVIP">
                     <h3>MVIP</h3>
                     <p>Otrzymaj najlepsze korzyści dzięki MVIP!</p>
                     <h1>30zł</h1>
@@ -120,21 +318,21 @@
             <h2>Rangi ekskluzywne</h2>
             <div class="rank-items">
                 <div class="rank">
-                    <img src="https://via.placeholder.com/300" alt="Sponsor">
+                    <img src="img/RANGASPONSOR.png" alt="Sponsor">
                     <h3>Sponsor</h3>
                     <p>Wspieraj serwer i zyskaj unikalne korzyści.</p>
                     <h1>50zł</h1>
                     <button onclick="location.href='sponsor.html'">Kup teraz</button>
                 </div>
                 <div class="rank">
-                    <img src="https://via.placeholder.com/300" alt="Legenda">
+                    <img src="img/RANGALEGENDA.png" alt="Legenda">
                     <h3>Legenda</h3>
                     <p>Stań się legendą na naszym serwerze.</p>
                     <h1>100zł</h1>
                     <button onclick="location.href='legenda.html'">Kup teraz</button>
                 </div>
                 <div class="rank">
-                    <img src="https://via.placeholder.com/300" alt="Swagger">
+                    <img src="img/RANGASWAGGER.png                    " alt="Swagger">
                     <h3>Swagger</h3>
                     <p>Stylowy sposób na wsparcie serwera.</p>
                     <h1>200zł</h1>
@@ -149,22 +347,92 @@
             <h2>Klucze</h2>
             <div class="rank-items">
                 <div class="rank">
-                    <img src="https://via.placeholder.com/300" alt="1">
-                    <h3>Mały Pakiet Kluczy</h3>
-                    <h1>5zł</h1>
-                    <button onclick="location.href='sponsor.html'">Kup teraz</button>
-                </div>
-                <div class="rank">
-                    <img src="https://via.placeholder.com/300" alt="2">
-                    <h3>średni pakiet kluczy</h3>
+                    <img src="img/klucz1.jpg" alt="1">
+                    <h3>Mały Pakiet x3 Klucze</h3>
                     <h1>10zł</h1>
-                    <button onclick="location.href='legenda.html'">Kup teraz</button>
+                    <button onclick="location.href='klucz.html'">Kup teraz</button>
                 </div>
                 <div class="rank">
-                    <img src="https://via.placeholder.com/300" alt="3">
-                    <h3>Duży pakiet kluczy</h3>
+                    <img src="img/klucz2.jpg" alt="2">
+                    <h3>Średni pakiet x8 kluczy</h3>
+                    <h1>25zł</h1>
+                    <button onclick="location.href='klucz.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="img/klucz3.jpg" alt="3">
+                    <h3>Duży pakiet x20 kluczy</h3>
+                    <h1>50zł</h1>
+                    <button onclick="location.href='klucz.html'">Kup teraz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="money">
+        <div class="container">
+            <h2>Pieniądze</h2>
+            <div class="rank-items">
+                <div class="rank">
+                    <img src="img/kasa1.jpg" alt="1">
+                    <h3>100$</h3>
+                    <h1>5zł</h1>
+                    <button onclick="location.href='money.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="img/kasa2.jpg" alt="2">
+                    <h3>500$</h3>
+                    <h1>10zł</h1>
+                    <button onclick="location.href='money.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="img/kasa3.jpg" alt="3">
+                    <h3>1000$</h3>
+                    <h1>15zł</h1>
+                    <button onclick="location.href='money.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="img/kasa4.jpg" alt="1">
+                    <h3>5000$</h3>
+                    <h1>35zł</h1>
+                    <button onclick="location.href='money.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="img/kasa5.jpg" alt="1">
+                    <h3>10000$</h3>
+                    <h1>50zł</h1>
+                    <button onclick="location.href='money.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="img/kasa6.jpg" alt="1">
+                    <h3>25000$</h3>
+                    <h1>100zł</h1>
+                    <button onclick="location.href='money.html'">Kup teraz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Unban">
+        <div class="container">
+            <h2>Usługi</h2>
+            <div class="rank-items">
+                <div class="rank">
+                    <img src="img/unban.png" alt="1">
+                    <h3>Unban</h3>
                     <h1>20zł</h1>
-                    <button onclick="location.href='swagger.html'">Kup teraz</button>
+                    <button onclick="location.href='usluga.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="https://via.placeholder.com/300" alt="1">
+                    <h3>Unmute</h3>
+                    <h1>10zł</h1>
+                    <button onclick="location.href='usluga.html'">Kup teraz</button>
+                </div>
+                <div class="rank">
+                    <img src="https://via.placeholder.com/300" alt="1">
+                    <h3>usunięcie wyspy</h3>
+                    <h1>5zł</h1>
+                    <button onclick="location.href='usluga.html'">Kup teraz</button>
                 </div>
             </div>
         </div>
@@ -178,18 +446,19 @@
                 <li><a href="https://discord.com/invite/3N8q2sCUzs"><img src="img/discord.png" alt="Discord"></a></li>
                 <li><a href="https://www.youtube.com/channel/UCbbKvg9orF5kQ2nqzxXBC7A"><img src="img/youtube.png" alt="YouTube"></a></li>
                 <li><a href="https://www.tiktok.com/@boczur1_"><img src="img/tik-tok.png" alt="TikTok"></a></li>
+                <li><a href="https://www.twitch.tv/boczur1"><img src="img/twitch.png" alt="Twitch"></a></li>
             </ul>
         </div>
     </section>
+    
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Boczur.pl. Wszelkie prawa zastrzeżone.</p>
-            <p>created by KaP1X0</p>
-            <p>Designed by Boczur1</p>
+            <p>&copy; 2024 Boczur.pl Wszelkie prawa zastrzeżone.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
